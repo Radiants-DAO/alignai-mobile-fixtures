@@ -1,0 +1,15 @@
+{
+  "name": "kit-expo-go-only",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "expo start --go"
+  },
+  "dependencies": {
+    "@wallet-ui/react-native-kit": "4.3.0",
+    "expo": "53.0.0",
+    "react": "19.0.0",
+    "react-native": "0.79.2",
+    "react-native-quick-crypto": "0.7.14"
+  }
+}

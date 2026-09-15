@@ -1,0 +1,7 @@
+{
+  "expo": {
+    "name": "direct-web3js-missing-authorize",
+    "slug": "direct-web3js-missing-authorize",
+    "scheme": "directnoauth"
+  }
+}

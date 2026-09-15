@@ -1,0 +1,1102 @@
+{
+  "schema": "a6-fixture-expected@1",
+  "analyzer": {
+    "component": "solana-mobile-inventory",
+    "ruleVersion": "mobile-wiring@1"
+  },
+  "discovery": {
+    "status": "complete",
+    "reasonCodes": [],
+    "unexpectedOmissions": []
+  },
+  "solanaDetection": {
+    "programCrates": []
+  },
+  "totals": {
+    "components": 11,
+    "sourceChecks": 55,
+    "pass": 36,
+    "not-applicable": 3,
+    "fail": 9,
+    "inconclusive": 7
+  },
+  "apps": [
+    {
+      "app": "direct-web3js-good",
+      "path": "apps/direct-web3js-good",
+      "kind": "good",
+      "intendedDefectRule": null,
+      "description": "`transact` session authorizes on devnet and signs with `auth.accounts[0].address`; rejection handled with `catch`/`finally`.",
+      "component": {
+        "id": "mobile-component-fef4679751ba6701946c9638aedc77d29beda7da857e7d9c8e249016f20c9236",
+        "platform": "expo",
+        "sdks": [
+          {
+            "name": "@solana-mobile/mobile-wallet-adapter-protocol-web3js",
+            "declaredVersion": "2.3.0",
+            "resolvedVersion": "2.3.0",
+            "presence": "imported"
+          }
+        ]
+      },
+      "inventoryCheck": {
+        "status": "completed",
+        "reasonCodes": []
+      },
+      "componentWiringCheck": null,
+      "sourceSelection": {
+        "truncated": false,
+        "reasonCodes": []
+      },
+      "sourceChecks": {
+        "setup-connect": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-good/App.tsx:17"
+          ]
+        },
+        "account-network-session": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-good/App.tsx:17"
+          ]
+        },
+        "signing-completion": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-good/App.tsx:17"
+          ]
+        },
+        "rejection-recovery": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-good/App.tsx:17"
+          ]
+        },
+        "platform-configuration": {
+          "result": "not-applicable",
+          "applicability": "not-applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "not-applicable"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-good/App.tsx:17"
+          ]
+        }
+      }
+    },
+    {
+      "app": "direct-web3js-hardcoded-address",
+      "path": "apps/direct-web3js-hardcoded-address",
+      "kind": "broken",
+      "intendedDefectRule": "account-network-session",
+      "description": "Authorizes, then signs for a hard-coded saved address instead of the authorized account.",
+      "component": {
+        "id": "mobile-component-547943844986a7f9398afae3bb3f5bc8782cf087c70c0d38a5f5ea79f5a6339b",
+        "platform": "expo",
+        "sdks": [
+          {
+            "name": "@solana-mobile/mobile-wallet-adapter-protocol-web3js",
+            "declaredVersion": "2.3.0",
+            "resolvedVersion": "2.3.0",
+            "presence": "imported"
+          }
+        ]
+      },
+      "inventoryCheck": {
+        "status": "completed",
+        "reasonCodes": []
+      },
+      "componentWiringCheck": null,
+      "sourceSelection": {
+        "truncated": false,
+        "reasonCodes": []
+      },
+      "sourceChecks": {
+        "setup-connect": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-hardcoded-address/App.tsx:19"
+          ]
+        },
+        "account-network-session": {
+          "result": "fail",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "source-check-failed"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-hardcoded-address/App.tsx:19"
+          ]
+        },
+        "signing-completion": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-hardcoded-address/App.tsx:19"
+          ]
+        },
+        "rejection-recovery": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-hardcoded-address/App.tsx:19"
+          ]
+        },
+        "platform-configuration": {
+          "result": "not-applicable",
+          "applicability": "not-applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "not-applicable"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-hardcoded-address/App.tsx:19"
+          ]
+        }
+      }
+    },
+    {
+      "app": "direct-web3js-missing-authorize",
+      "path": "apps/direct-web3js-missing-authorize",
+      "kind": "broken",
+      "intendedDefectRule": "setup-connect",
+      "description": "Calls `wallet.signMessages` inside `transact` without authorizing the session.",
+      "component": {
+        "id": "mobile-component-df0e63d1f8ba78445dc1a7a9f0f7e4fce512c54975306d6a872f6e4c271639a9",
+        "platform": "expo",
+        "sdks": [
+          {
+            "name": "@solana-mobile/mobile-wallet-adapter-protocol-web3js",
+            "declaredVersion": "2.3.0",
+            "resolvedVersion": "2.3.0",
+            "presence": "imported"
+          }
+        ]
+      },
+      "inventoryCheck": {
+        "status": "completed",
+        "reasonCodes": []
+      },
+      "componentWiringCheck": {
+        "status": "skipped",
+        "reasonCodes": [
+          "unsupported-shape"
+        ]
+      },
+      "sourceSelection": {
+        "truncated": false,
+        "reasonCodes": [
+          "unsupported-shape"
+        ]
+      },
+      "sourceChecks": {
+        "setup-connect": {
+          "result": "fail",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "source-check-failed"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-missing-authorize/App.tsx:15"
+          ]
+        },
+        "account-network-session": {
+          "result": "inconclusive",
+          "applicability": "applicable",
+          "sourceShape": "unknown",
+          "reasonCodes": [
+            "unsupported-shape"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-missing-authorize/App.tsx:15"
+          ]
+        },
+        "signing-completion": {
+          "result": "inconclusive",
+          "applicability": "applicable",
+          "sourceShape": "unknown",
+          "reasonCodes": [
+            "unsupported-shape"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-missing-authorize/App.tsx:15"
+          ]
+        },
+        "rejection-recovery": {
+          "result": "inconclusive",
+          "applicability": "applicable",
+          "sourceShape": "unknown",
+          "reasonCodes": [
+            "unsupported-shape"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-missing-authorize/App.tsx:15"
+          ]
+        },
+        "platform-configuration": {
+          "result": "not-applicable",
+          "applicability": "not-applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "not-applicable"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/direct-web3js-missing-authorize/App.tsx:15"
+          ]
+        }
+      }
+    },
+    {
+      "app": "kit-cluster-mismatch",
+      "path": "apps/kit-cluster-mismatch",
+      "kind": "broken",
+      "intendedDefectRule": "account-network-session",
+      "description": "Provider cluster id is `solana:devnet` but its RPC url is the mainnet-beta endpoint.",
+      "component": {
+        "id": "mobile-component-10f419b5fde5d0d459cdd4b3c164eee777820153018983e614fa9a0208037ba3",
+        "platform": "expo",
+        "sdks": [
+          {
+            "name": "@wallet-ui/react-native-kit",
+            "declaredVersion": "4.3.0",
+            "resolvedVersion": "4.3.0",
+            "presence": "imported"
+          }
+        ]
+      },
+      "inventoryCheck": {
+        "status": "completed",
+        "reasonCodes": []
+      },
+      "componentWiringCheck": null,
+      "sourceSelection": {
+        "truncated": false,
+        "reasonCodes": []
+      },
+      "sourceChecks": {
+        "setup-connect": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-cluster-mismatch/App.tsx:15",
+            "apps/kit-cluster-mismatch/App.tsx:35"
+          ]
+        },
+        "account-network-session": {
+          "result": "fail",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "source-check-failed"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-cluster-mismatch/App.tsx:15",
+            "apps/kit-cluster-mismatch/App.tsx:35"
+          ]
+        },
+        "signing-completion": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-cluster-mismatch/App.tsx:15",
+            "apps/kit-cluster-mismatch/App.tsx:35"
+          ]
+        },
+        "rejection-recovery": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-cluster-mismatch/App.tsx:15",
+            "apps/kit-cluster-mismatch/App.tsx:35"
+          ]
+        },
+        "platform-configuration": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-cluster-mismatch/App.tsx:15",
+            "apps/kit-cluster-mismatch/App.tsx:35"
+          ]
+        }
+      }
+    },
+    {
+      "app": "kit-discarded-signature",
+      "path": "apps/kit-discarded-signature",
+      "kind": "broken",
+      "intendedDefectRule": "signing-completion",
+      "description": "The signature is awaited but never returned or rendered; the screen shows Success regardless.",
+      "component": {
+        "id": "mobile-component-7a85a2c25b7cf64b2cbb3cce130a5bdd8ead8063e82c78c303a5183b7d910f15",
+        "platform": "expo",
+        "sdks": [
+          {
+            "name": "@wallet-ui/react-native-kit",
+            "declaredVersion": "4.3.0",
+            "resolvedVersion": "4.3.0",
+            "presence": "imported"
+          }
+        ]
+      },
+      "inventoryCheck": {
+        "status": "completed",
+        "reasonCodes": []
+      },
+      "componentWiringCheck": null,
+      "sourceSelection": {
+        "truncated": false,
+        "reasonCodes": []
+      },
+      "sourceChecks": {
+        "setup-connect": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-discarded-signature/App.tsx:15",
+            "apps/kit-discarded-signature/App.tsx:36"
+          ]
+        },
+        "account-network-session": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-discarded-signature/App.tsx:15",
+            "apps/kit-discarded-signature/App.tsx:36"
+          ]
+        },
+        "signing-completion": {
+          "result": "fail",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "source-check-failed"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-discarded-signature/App.tsx:15",
+            "apps/kit-discarded-signature/App.tsx:36"
+          ]
+        },
+        "rejection-recovery": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-discarded-signature/App.tsx:15",
+            "apps/kit-discarded-signature/App.tsx:36"
+          ]
+        },
+        "platform-configuration": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-discarded-signature/App.tsx:15",
+            "apps/kit-discarded-signature/App.tsx:36"
+          ]
+        }
+      }
+    },
+    {
+      "app": "kit-expo-go-only",
+      "path": "apps/kit-expo-go-only",
+      "kind": "broken",
+      "intendedDefectRule": "platform-configuration",
+      "description": "The only package script is `expo start --go`; there is no native Android build path.",
+      "component": {
+        "id": "mobile-component-72b31abf50bd3d0edff151c08b5de49301d48ea62b33a7ef79eaadfb9d7d7ef9",
+        "platform": "expo",
+        "sdks": [
+          {
+            "name": "@wallet-ui/react-native-kit",
+            "declaredVersion": "4.3.0",
+            "resolvedVersion": "4.3.0",
+            "presence": "imported"
+          }
+        ]
+      },
+      "inventoryCheck": {
+        "status": "completed",
+        "reasonCodes": []
+      },
+      "componentWiringCheck": null,
+      "sourceSelection": {
+        "truncated": false,
+        "reasonCodes": []
+      },
+      "sourceChecks": {
+        "setup-connect": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-expo-go-only/App.tsx:15",
+            "apps/kit-expo-go-only/App.tsx:35"
+          ]
+        },
+        "account-network-session": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-expo-go-only/App.tsx:15",
+            "apps/kit-expo-go-only/App.tsx:35"
+          ]
+        },
+        "signing-completion": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-expo-go-only/App.tsx:15",
+            "apps/kit-expo-go-only/App.tsx:35"
+          ]
+        },
+        "rejection-recovery": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-expo-go-only/App.tsx:15",
+            "apps/kit-expo-go-only/App.tsx:35"
+          ]
+        },
+        "platform-configuration": {
+          "result": "fail",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "source-check-failed"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-expo-go-only/App.tsx:15",
+            "apps/kit-expo-go-only/App.tsx:35"
+          ]
+        }
+      }
+    },
+    {
+      "app": "kit-good",
+      "path": "apps/kit-good",
+      "kind": "good",
+      "intendedDefectRule": null,
+      "description": "Provider with a matching devnet cluster, crypto polyfill installed before the SDK import, awaited signature returned from the handler, busy state reset in `finally`, native `expo run:android` build script.",
+      "component": {
+        "id": "mobile-component-ef6851bed406e3487f641b2758ef73135bf9563419145a283eecf1b85ad3aca6",
+        "platform": "expo",
+        "sdks": [
+          {
+            "name": "@wallet-ui/react-native-kit",
+            "declaredVersion": "4.3.0",
+            "resolvedVersion": "4.3.0",
+            "presence": "imported"
+          }
+        ]
+      },
+      "inventoryCheck": {
+        "status": "completed",
+        "reasonCodes": []
+      },
+      "componentWiringCheck": null,
+      "sourceSelection": {
+        "truncated": false,
+        "reasonCodes": []
+      },
+      "sourceChecks": {
+        "setup-connect": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-good/App.tsx:15",
+            "apps/kit-good/App.tsx:35"
+          ]
+        },
+        "account-network-session": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-good/App.tsx:15",
+            "apps/kit-good/App.tsx:35"
+          ]
+        },
+        "signing-completion": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-good/App.tsx:15",
+            "apps/kit-good/App.tsx:35"
+          ]
+        },
+        "rejection-recovery": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-good/App.tsx:15",
+            "apps/kit-good/App.tsx:35"
+          ]
+        },
+        "platform-configuration": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-good/App.tsx:15",
+            "apps/kit-good/App.tsx:35"
+          ]
+        }
+      }
+    },
+    {
+      "app": "kit-invalid-identity-uri",
+      "path": "apps/kit-invalid-identity-uri",
+      "kind": "broken",
+      "intendedDefectRule": "platform-configuration",
+      "description": "Provider identity `uri` has no URI scheme.",
+      "component": {
+        "id": "mobile-component-40acb115e274d6388c1ad472b7f0553dd18b5d552848fc30f2f31250ce47652d",
+        "platform": "expo",
+        "sdks": [
+          {
+            "name": "@wallet-ui/react-native-kit",
+            "declaredVersion": "4.3.0",
+            "resolvedVersion": "4.3.0",
+            "presence": "imported"
+          }
+        ]
+      },
+      "inventoryCheck": {
+        "status": "completed",
+        "reasonCodes": []
+      },
+      "componentWiringCheck": null,
+      "sourceSelection": {
+        "truncated": false,
+        "reasonCodes": []
+      },
+      "sourceChecks": {
+        "setup-connect": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-invalid-identity-uri/App.tsx:15",
+            "apps/kit-invalid-identity-uri/App.tsx:35"
+          ]
+        },
+        "account-network-session": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-invalid-identity-uri/App.tsx:15",
+            "apps/kit-invalid-identity-uri/App.tsx:35"
+          ]
+        },
+        "signing-completion": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-invalid-identity-uri/App.tsx:15",
+            "apps/kit-invalid-identity-uri/App.tsx:35"
+          ]
+        },
+        "rejection-recovery": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-invalid-identity-uri/App.tsx:15",
+            "apps/kit-invalid-identity-uri/App.tsx:35"
+          ]
+        },
+        "platform-configuration": {
+          "result": "fail",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "source-check-failed"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-invalid-identity-uri/App.tsx:15",
+            "apps/kit-invalid-identity-uri/App.tsx:35"
+          ]
+        }
+      }
+    },
+    {
+      "app": "kit-no-provider",
+      "path": "apps/kit-no-provider",
+      "kind": "broken",
+      "intendedDefectRule": "setup-connect",
+      "description": "`useMobileWallet()` is called but the screen is never rendered inside `MobileWalletProvider`.",
+      "component": {
+        "id": "mobile-component-ff834250d5adeea7ea833bea7fcff03ec222e2b3e4552608113ae37ed9422cff",
+        "platform": "expo",
+        "sdks": [
+          {
+            "name": "@wallet-ui/react-native-kit",
+            "declaredVersion": "4.3.0",
+            "resolvedVersion": "4.3.0",
+            "presence": "imported"
+          }
+        ]
+      },
+      "inventoryCheck": {
+        "status": "completed",
+        "reasonCodes": []
+      },
+      "componentWiringCheck": {
+        "status": "skipped",
+        "reasonCodes": [
+          "unsupported-shape"
+        ]
+      },
+      "sourceSelection": {
+        "truncated": false,
+        "reasonCodes": [
+          "unsupported-shape"
+        ]
+      },
+      "sourceChecks": {
+        "setup-connect": {
+          "result": "fail",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "source-check-failed"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-no-provider/App.tsx:15"
+          ]
+        },
+        "account-network-session": {
+          "result": "inconclusive",
+          "applicability": "applicable",
+          "sourceShape": "unknown",
+          "reasonCodes": [
+            "unsupported-shape"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-no-provider/App.tsx:15"
+          ]
+        },
+        "signing-completion": {
+          "result": "inconclusive",
+          "applicability": "applicable",
+          "sourceShape": "unknown",
+          "reasonCodes": [
+            "unsupported-shape"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-no-provider/App.tsx:15"
+          ]
+        },
+        "rejection-recovery": {
+          "result": "inconclusive",
+          "applicability": "applicable",
+          "sourceShape": "unknown",
+          "reasonCodes": [
+            "unsupported-shape"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-no-provider/App.tsx:15"
+          ]
+        },
+        "platform-configuration": {
+          "result": "inconclusive",
+          "applicability": "applicable",
+          "sourceShape": "unknown",
+          "reasonCodes": [
+            "unsupported-shape"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-no-provider/App.tsx:15"
+          ]
+        }
+      }
+    },
+    {
+      "app": "kit-polyfill-after-sdk",
+      "path": "apps/kit-polyfill-after-sdk",
+      "kind": "broken",
+      "intendedDefectRule": "platform-configuration",
+      "description": "`./polyfills` (react-native-quick-crypto `install()`) is imported after the wallet SDK import.",
+      "component": {
+        "id": "mobile-component-bf0b4c3bd3af3fbe50c6efd5775d54cdae1d26cf003f077ece5b6ca9cd621f79",
+        "platform": "expo",
+        "sdks": [
+          {
+            "name": "@wallet-ui/react-native-kit",
+            "declaredVersion": "4.3.0",
+            "resolvedVersion": "4.3.0",
+            "presence": "imported"
+          }
+        ]
+      },
+      "inventoryCheck": {
+        "status": "completed",
+        "reasonCodes": []
+      },
+      "componentWiringCheck": null,
+      "sourceSelection": {
+        "truncated": false,
+        "reasonCodes": []
+      },
+      "sourceChecks": {
+        "setup-connect": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-polyfill-after-sdk/App.tsx:15",
+            "apps/kit-polyfill-after-sdk/App.tsx:35"
+          ]
+        },
+        "account-network-session": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-polyfill-after-sdk/App.tsx:15",
+            "apps/kit-polyfill-after-sdk/App.tsx:35"
+          ]
+        },
+        "signing-completion": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-polyfill-after-sdk/App.tsx:15",
+            "apps/kit-polyfill-after-sdk/App.tsx:35"
+          ]
+        },
+        "rejection-recovery": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-polyfill-after-sdk/App.tsx:15",
+            "apps/kit-polyfill-after-sdk/App.tsx:35"
+          ]
+        },
+        "platform-configuration": {
+          "result": "fail",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "source-check-failed"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-polyfill-after-sdk/App.tsx:15",
+            "apps/kit-polyfill-after-sdk/App.tsx:35"
+          ]
+        }
+      }
+    },
+    {
+      "app": "kit-stuck-busy-on-reject",
+      "path": "apps/kit-stuck-busy-on-reject",
+      "kind": "broken",
+      "intendedDefectRule": "rejection-recovery",
+      "description": "Busy state is set before signing with no `try/finally`, so a wallet rejection leaves the spinner running.",
+      "component": {
+        "id": "mobile-component-1c4c0f37dded1f855e89a0e2eff89097642ba0de193e6a0d186fa9542bf0cadf",
+        "platform": "expo",
+        "sdks": [
+          {
+            "name": "@wallet-ui/react-native-kit",
+            "declaredVersion": "4.3.0",
+            "resolvedVersion": "4.3.0",
+            "presence": "imported"
+          }
+        ]
+      },
+      "inventoryCheck": {
+        "status": "completed",
+        "reasonCodes": []
+      },
+      "componentWiringCheck": null,
+      "sourceSelection": {
+        "truncated": false,
+        "reasonCodes": []
+      },
+      "sourceChecks": {
+        "setup-connect": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-stuck-busy-on-reject/App.tsx:14",
+            "apps/kit-stuck-busy-on-reject/App.tsx:31"
+          ]
+        },
+        "account-network-session": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-stuck-busy-on-reject/App.tsx:14",
+            "apps/kit-stuck-busy-on-reject/App.tsx:31"
+          ]
+        },
+        "signing-completion": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-stuck-busy-on-reject/App.tsx:14",
+            "apps/kit-stuck-busy-on-reject/App.tsx:31"
+          ]
+        },
+        "rejection-recovery": {
+          "result": "fail",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [
+            "source-check-failed"
+          ],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-stuck-busy-on-reject/App.tsx:14",
+            "apps/kit-stuck-busy-on-reject/App.tsx:31"
+          ]
+        },
+        "platform-configuration": {
+          "result": "pass",
+          "applicability": "applicable",
+          "sourceShape": "supported",
+          "reasonCodes": [],
+          "actionIds": [
+            "action-1"
+          ],
+          "anchors": [
+            "apps/kit-stuck-busy-on-reject/App.tsx:14",
+            "apps/kit-stuck-busy-on-reject/App.tsx:31"
+          ]
+        }
+      }
+    }
+  ]
+}
