@@ -21,8 +21,11 @@ Per-app expected results, rule by rule, are in [`EXPECTED.md`](EXPECTED.md) and 
 
 - Every app has its own `package.json` with exact dependency versions and its own `package-lock.json`
   (`lockfileVersion` 3). There is no root manifest or workspace.
-- The lockfiles are **hand-written**, not produced by `npm install`. They list direct dependencies only, carry no
-  `integrity` hashes, and are not meant to be installed. Versions other than the two wallet SDK pins are illustrative.
+- The lockfiles are **hand-written**, not produced by `npm install`. They list the direct dependencies plus
+  `@solana-mobile/mobile-wallet-adapter-protocol`, which both wallet SDK pins depend on by caret and which a real
+  install therefore resolves transitively — the checks read that package's `authorize` surface, so its resolution is
+  part of what each app pins. They carry no `integrity` hashes and are not meant to be installed. Versions other than
+  the two wallet SDK pins and the protocol package are illustrative.
 - Apps live under `apps/`, not under `examples/`, `samples/`, `test/` or `fixtures/`, because code in those
   directories is treated as example-only and is not analysed.
 - There are no Solana programs, no `Cargo.toml`, no keys, no endpoints other than the public Solana devnet and
